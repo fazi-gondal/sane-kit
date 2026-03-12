@@ -538,6 +538,33 @@ export const sanityOptions = {
     { title: isPortuguese ? 'Código' : 'Code', value: 'code' },
     { title: isPortuguese ? 'Sublinhado' : 'Underline', value: 'underline' },
     { title: isPortuguese ? 'Riscado' : 'Strike-through', value: 'strike-through' },
+    { title: isPortuguese ? 'Sobrescrito' : 'Superscript', value: 'sup' },
+    { title: isPortuguese ? 'Subscrito' : 'Subscript', value: 'sub' },
+    { title: isPortuguese ? 'Realçar' : 'Highlight', value: 'highlight' },
+  ],
+  // Callout type options
+  calloutTypes: [
+    { title: isPortuguese ? 'Nota' : 'Note', value: 'note' },
+    { title: isPortuguese ? 'Dica' : 'Tip', value: 'tip' },
+    { title: isPortuguese ? 'Aviso' : 'Warning', value: 'warning' },
+    { title: isPortuguese ? 'Perigo' : 'Danger', value: 'danger' },
+    { title: isPortuguese ? 'Informação' : 'Info', value: 'info' },
+  ],
+  // Text color options for annotation
+  textColorOptions: [
+    { title: isPortuguese ? 'Vermelho' : 'Red', value: 'red' },
+    { title: isPortuguese ? 'Azul' : 'Blue', value: 'blue' },
+    { title: isPortuguese ? 'Verde' : 'Green', value: 'green' },
+    { title: isPortuguese ? 'Amarelo' : 'Yellow', value: 'yellow' },
+    { title: isPortuguese ? 'Roxo' : 'Purple', value: 'purple' },
+    { title: isPortuguese ? 'Cinza' : 'Muted', value: 'muted' },
+  ],
+  // Text alignment options
+  textAlignmentOptions: [
+    { title: isPortuguese ? 'Esquerda' : 'Left', value: 'left' },
+    { title: isPortuguese ? 'Centro' : 'Center', value: 'center' },
+    { title: isPortuguese ? 'Direita' : 'Right', value: 'right' },
+    { title: isPortuguese ? 'Justificado' : 'Justify', value: 'justify' },
   ],
   // Header options
   headerVariants: [

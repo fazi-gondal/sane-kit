@@ -17,6 +17,7 @@ import { category } from "./category";
 import { blogPage } from "./blogPage";
 import { blogSection } from "./blogSection";
 import { codeBlock } from "./codeBlock";
+import { calloutBlock } from "./calloutBlock";
 import { portableText } from "./portableText";
 import { contactSection } from "./contactSection";
 import { newsletterSection } from "./newsletterSection";
@@ -31,6 +32,7 @@ export const schemaTypes = [
   category,
   blogPage,
   codeBlock,
+  calloutBlock,
   portableText,
   heroSection,
   casesSection,
