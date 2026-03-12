@@ -12,14 +12,18 @@ import { Menu } from "lucide-react";
 export default function Default({
   title,
   logo,
-  navigationItems = [],
-  ctaButtons = [],
+  navigationItems,
+  ctaButtons,
   dropdownCTALabel,
   dropdownCTAUrl = "/contact",
   locale,
   dictionary,
 }: HeaderProps) {
   const [scrolled] = useState(false);
+  
+  // Ensure arrays are never null/undefined to prevent map errors
+  const safeNavigationItems = navigationItems ?? [];
+  const safeCtaButtons = ctaButtons ?? [];
   
   const siteName = title;
   const ctaLabel = dropdownCTALabel || dictionary?.header?.dropdownCTALabel || "Book a call today";
@@ -37,7 +41,7 @@ export default function Default({
         <div className="hidden lg:flex flex-1 justify-center">
           <NavigationMenu>
             <NavigationMenuList className="flex justify-center gap-4">
-              {navigationItems.map((item) => (
+              {safeNavigationItems.map((item) => (
                 <NavigationMenuItem key={item._key}>
                   {item.href ? (
                     <NavigationMenuLink asChild>
@@ -96,7 +100,7 @@ export default function Default({
         {/* RIGHT SECTION */}
         <div className="flex justify-end w-full gap-4 items-center">
           <div className="hidden lg:flex gap-4">
-            {ctaButtons.map((button) => (
+            {safeCtaButtons.map((button) => (
               <HeaderCTAButton
                 key={button._key}
                 label={button.label}
@@ -126,7 +130,7 @@ export default function Default({
                 </SheetTitle>
               </SheetHeader>
               <div className="flex flex-col gap-6 py-6">
-                {navigationItems.map((item) => (
+                {safeNavigationItems.map((item) => (
                   <div key={item._key} className="flex flex-col gap-2">
                     {item.href ? (
                       <Link
@@ -165,7 +169,7 @@ export default function Default({
                   </div>
                 ))}
                 <div className="mt-6 flex flex-col gap-3 border-t pt-6">
-                  {ctaButtons.map((button) => (
+                  {safeCtaButtons.map((button) => (
                     <HeaderCTAButton
                       key={button._key}
                       label={button.label}
